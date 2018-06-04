@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+$bg-color: #fff;
+
+body {
+	background:$bg-color;
+	font-family: 'Roboto', sans-serif !important;
+}
+
+ .m-l-xs {
+ 	margin-left: 5px;
+ }
+
+ .inline {
+ 	display: inline-block !important;
+ }
+
+.rating {
+	.active {
+  		color: orange;
+ 	}	
+}
+
+.text-xs {
+	font-size: 10px;
+}
+
+.text-sm {
+	font-size: 12px;
+}
+
+.text-md {
+	font-size: 14px;
+}
+.text-lg {
+	font-size: 16px;
+}
+
+ul {
+	margin-left: -25px;
+}

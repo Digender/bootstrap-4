@@ -4,9 +4,9 @@ const gulpSass = require('gulp-sass');
 
 
 gulp.task('sass', function() {
-	return gulp.src(['node_modules/bootstrap/scss/bootstrap.scss', 'src/scss/*.scss'])
+	return gulp.src(['node_modules/bootstrap/scss/bootstrap.scss', 'cv/scss/*.scss'])
 		.pipe(gulpSass())
-		.pipe(gulp.dest('src/css'))
+		.pipe(gulp.dest('cv/css'))
 		.pipe(browserSync.stream());
 });
 
@@ -17,19 +17,19 @@ gulp.task('js', function() {
 	'node_modules/tether/dist/js/tether.min.js',
 	])
 	  .pipe(sass())
-	  .pipe(gulp.dest('src/js'))
+	  .pipe(gulp.dest('cv/js'))
 	  .pipe(browserSync.stream());
 });
 
 gulp.task('serve', ['sass'],function() {
 	browserSync.init({
-		server: './src',
+		server: './cv',
 	});
 	gulp.watch([
 		'node_modules/bootstrap/scss/bootstrap.scss',
-		'src/scss/*.scss'
+		'cv/scss/*.scss'
 	], ['sass']);
-	gulp.watch('src/*.html').on('change', browserSync.reload);
+	gulp.watch('cv/*.html').on('change', browserSync.reload);
 });
 
 gulp.task('default', ['js', 'serve']);
